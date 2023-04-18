@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var xMax;
+			var yMax;
+			var content = "";
+			
+			function checking(){
+				xMax = document.getElementById("xSide").value;
+				yMax = document.getElementById("ySide").value;
+				content = "";
+				
+				if (xMax < 2 || xMax > 10 || yMax < 2 || yMax > 10){
+					window.alert("please enter a number between 2 and 10");
+				} else {
+					process();
+				}
+			}
+			
+			function process() {
+				var num = 1;
+				var xi = 1;
+				var yi = 1;
+				
+				content = "<table>";
+				while(yi <= yMax){
+					content = content + "<tr>";
+					
+					while(xi <= xMax){
+						content = content + "<td>" + (num*xi).toString() +"</td>";
+						xi++;
+						console.log(content);
+					}
+					
+					num++;
+					xi = 1;
+					content = content + "</tr>";
+					yi++;
+					
+				}
+				content = content + "</table>";
+				
+				console.log(content);
+				document.getElementById("table").innerHTML = content;
+			}
+		</script>
+		<style>
+			#table {
+				display: inline-block;
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<label>[Enter a number between 2 and 10]</label><br><br>
+			<input id="xSide" type="number" value="5">
+			<label> by </label>
+			<input id="ySide" type="number" value="5">
+		</form><br>
+		<button onclick = "checking()">Submit</button><br><br>
+		<div id="table"></div>
+	</body>
+</html>
