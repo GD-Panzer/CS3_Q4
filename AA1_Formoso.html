@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div id="output">
+		<button onclick="dnaSequence()">Click me</button>
+		</div>
+		<script>
+			var phe = ["UUU", "UUC"];
+			var leu = ["UUA", "UUG", "CUU", "CUC", "CUA", "CUG"];
+			var ile = ["AUU", "AUC", "AUA"];
+			var met = ["AUG"];
+			var val = ["GUU", "GUC", "GUA", "GUG"];
+			var ser = ["UCU", "UCC", "UCA", "UCG"];
+			var pro = ["CCU", "CCC", "CCA", "CCG"];
+			var thr = ["ACU", "ACC", "ACA", "ACG"];
+			var ala = ["GCU", "GCC", "GCA", "GCG"];
+			var tyr = ["UAU", "UAC"];
+			var his = ["CAU", "CAC"];
+			var gln = ["CAA", "CAG"];
+			var asn = ["AAU", "ACC"];
+			var lys = ["AAA", "AAG"];
+			var asp = ["GAU", "GAC"];
+			var glu = ["GAA", "GAG"];
+			var cys = ["UGU", "UGC"];
+			var trp = ["UGG"];
+			var arg = ["CGU", "CGC", "CGA", "CGG", "AGA", "AGG"];
+			var ser = ["AGU", "AGC"];
+			var gly = ["GGU", "GGC", "GGA", "GGG"];
+			var end = ["UAA", "UAG", "UGA"];
+			function dnaSequence(){
+				var arr = [];
+				var sequence = prompt("what is the sequence", "").toUpperCase();
+				var i = 0;
+				var pos = 0;
+				console.log(sequence);
+				
+				sequence = sequence.slice(sequence.indexOf("AUG"), sequence.length);
+				console.log(sequence);
+				
+				
+				i = 0;
+				
+				while (i < (sequence.length/3)){
+					arr.push(sequence.slice(pos, (pos + 3)));
+					i++;
+					pos = pos + 3;
+				}
+				i = 0;
+				console.log(arr.length);
+				document.write("[")
+				
+				while (i < arr.length){
+					document.write(arr[i] + " ");
+					i++;
+				}
+				
+				document.write("]" + "<br>");
+				i = 0;
+				
+				while(i < arr.length) {
+					pos = 0;
+					switch (arr[i]){
+						case phe[0]:
+						case phe[1]:
+							document.write(i + ">>> " + "PHE");
+							break;
+							
+						case leu[0]:
+						case leu[1]:
+						case leu[2]:
+						case leu[3]:
+						case leu[4]:
+						case leu[5]:
+							document.write(i + ">>> " + "LEU");
+							break;
+							
+						case ile[0]:
+						case ile[1]:
+						case ile[2]:
+							document.write(i + ">>> " + "ILE");
+							break;
+							
+						case met[0]:
+							document.write(i + ">>> " + "MET");
+							break;
+							
+						case val[0]:
+						case val[1]:
+						case val[2]:
+						case val[3]:
+							document.write(i + ">>> " + "VAL");
+							break;
+							
+						case ser[0]:
+						case ser[1]:
+						case ser[2]:
+						case ser[3]:
+							document.write(i + ">>> " + "SER");
+							break;
+							
+						case pro[0]:
+						case pro[1]:
+						case pro[2]:
+						case pro[3]:
+							document.write(i + ">>> " + "PRO");
+							break;
+							
+						case thr[0]:
+						case thr[1]:
+						case thr[2]:
+						case thr[3]:
+							document.write(i + ">>> " + "THR");
+							break;
+							
+						case ala[0]:
+						case ala[1]:
+						case ala[2]:
+						case ala[3]:
+							document.write(i + ">>> " + "ALA");
+							break;
+							
+						case tyr[0]:
+						case tyr[1]:
+							document.write(i + ">>> " + "TYR");
+							break;
+						
+						case his[0]:
+						case his[1]:
+							document.write(i + ">>> " + "HIS");
+							break;
+						
+						case gln[0]:
+						case gln[1]:
+							document.write(i + ">>> " + "GLN");
+							break;
+							
+						case asn[0]:
+						case asn[1]:
+							document.write(i + ">>> " + "ASN");
+							break;
+						
+						case lys[0]:
+						case lys[1]:
+							document.write(i + ">>> " + "LYS");
+							break;
+						
+						case asp[0]:
+						case asp[1]:
+							document.write(i + ">>> " + "ASP");
+							break;
+							
+						case glu[0]:
+						case glu[1]:
+							document.write(i + ">>> " + "GLU");
+							break;
+						
+						case cys[0]:
+						case cys[1]:
+							document.write(i + ">>> " + "CYS");
+							break;
+							
+						case trp[0]:
+							document.write(i + ">>> " + "TRP");
+							break;
+						
+						case arg[0]:
+						case arg[1]:
+						case arg[2]:
+						case arg[3]:
+						case arg[4]:
+						case arg[5]:
+							document.write(i + ">>> " + "ARG");
+							break;
+							
+						case ser[0]:
+						case ser[1]:
+							document.write(i + ">>> " + "SER");
+							break;
+							
+						case gly[0]:
+						case gly[1]:
+						case gly[2]:
+						case gly[3]:
+							document.write(i + ">>> " + "GLY");
+							break;
+							
+						case end[0]:
+						case end[1]:
+						case end[2]:
+							document.write(i + ">>> " + "END CODON");
+							break;
+							
+						default:
+							document.write("not a codon");
+					}
+					
+					document.write("<br>")
+					i++;
+				}
+			}
+		</script>
+	</body>
+</html>
