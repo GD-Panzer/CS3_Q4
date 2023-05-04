@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<div id="output">
-		<button onclick="dnaSequence()">Click me</button>
-		</div>
+		
 		<script>
 			var phe = ["UUU", "UUC"];
 			var leu = ["UUA", "UUG", "CUU", "CUC", "CUA", "CUG"];
@@ -27,7 +25,7 @@
 			var ser = ["AGU", "AGC"];
 			var gly = ["GGU", "GGC", "GGA", "GGG"];
 			var end = ["UAA", "UAG", "UGA"];
-			function dnaSequence(){
+			
 				var arr = [];
 				var sequence = prompt("what is the sequence", "").toUpperCase();
 				var i = 0;
@@ -197,7 +195,7 @@
 					document.write("<br>")
 					i++;
 				}
-			}
+			
 		</script>
 	</body>
 </html>
